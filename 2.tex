@@ -1,0 +1,182 @@
+\section{第二次课后作业}
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 单选题]
+ 互信息 $ I(\xi; \eta)=0 $ 的充分必要条件是随机变量 $ \xi $ 与 $ \eta $ 的关系为 ( ).
+
+A. $ \eta $ 由 $ \xi $ 决定
+
+B.  相互独立
+
+C.  $ \xi $ 由 $ \eta $ 决定
+
+\tcblower
+根据互信息与联合熵的关系可知,$ I(\xi, \eta) =H(\xi)+H(\eta)-H(\xi,\eta)=0 $,于是我们有$ H(\xi)+H(\eta)=H(\xi,\eta) $.由前面知$ \eta $ 与$ \xi $相互独立.
+因此，互信息为零是 $ \xi $ 和 $ \eta $ 相互独立的充分必要条件.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+ 令 $ \xi $ 是一个离散随机变量，它服从的概率分布是 $ \overline{p}=\left(p_{1}, p_{2}, \cdots p_{a}\right) $, 则 $ \xi $ 的熵 $ {H}(\xi)=\underline{\hspace{1cm}} $ ，它在$\underline{\hspace{1cm}}$ 条件下达到最大值，最大值 $ = \underline{\hspace{1cm}}$.
+
+\tcblower
+
+对于离散随机变量 $ \xi $，其熵 $ H(\xi) $ 定义为：
+
+$$ H(\xi) = -\sum_{i=1}^{a} p_i \log p_i $$
+
+其中，$ p_i $ 是 $ \xi $ 取第 $ i $ 个值的概率，$ a $ 是 $ \xi $ 可能取的值的个数.
+
+当 $ \xi $ 的概率分布是均匀分布时，即所有可能取值的概率相等，即 $ p_i = \frac{1}{a} $，此时熵 $ H(\xi) $ 达到最大值.在这种情况下，熵的最大值为：
+
+$$ H_{\text{max}} = -\sum_{i=1}^{a} \frac{1}{a} \log \frac{1}{a} = -a \cdot \frac{1}{a} \log \frac{1}{a} = \log a $$
+
+因此，当 $ \xi $ 的概率分布是均匀分布时，熵 $ H(\xi) $ 达到最大值，最大值为 $ \log a $.
+
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+ 设$p(x)$ ,$q(x)$是离散信源$\mathscr{X}$上的两个概率分布，则它们的互熵$H(p||q)=0$的充分必要条件是 $\underline{\hspace{1cm}}$ .
+\tcblower
+当 $ H(p||q) = 0 $ 时，根据互熵的定义，我们有：
+$$
+\begin{aligned}
+H(p \| q) & =\sum_{x \in \mathscr{X}} p(x) \log \frac{p(x)}{q(x)}=\sum_{x \in \mathscr{X}} p(x) [\log p(x) - \log q(x)]=0\\
+\end{aligned}
+$$
+因此, 当且仅当对任意$q(x)\neq 0$的 $ x $, 满足 $ p(x)=q(x)$时$ H(p \| q)=0 $ .
+
+
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+ 互信息$I(\xi;\eta)$与熵$H(\xi)$,$H(\eta)$及联合熵$H(\xi,\eta)$满足关系式$\underline{\hspace{2cm}}$ .
+
+\tcblower
+$$
+ \begin{aligned}
+& I(\xi ; \eta)=\sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y) \log \frac{p(x, y)}{p(x) q(y)} \\
+= & \sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y)[\log p(x, y)-\log p(x) q(y)] \\
+= & \sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y)[\log p(x, y)-\log p(x)-\log q(y)] \\
+= & \sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y) \log p(x, y)-\sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y) \log p(x)  -\sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y) \log q(y) \\
+= & -H(\xi, \eta)+H(\xi)+H(\eta)=H(\xi)+H(\eta)-H(\xi, \eta)
+\end{aligned}
+$$
+即$ I(\xi; \eta) =H(\xi)+H(\eta)-H(\xi,\eta) $.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 令 $ (\xi, \eta) $ 具有如下联合分布
+\begin{tabular}{|c|cccc|}
+\hline\diagbox{$ \eta $}{$ \xi $} & 1 & 2 & 3 & 4 \\
+\hline 1 & $ \frac{1}{8} $ & $ \frac{1}{16} $ & $ \frac{1}{32} $ & $ \frac{1}{32} $ \\
+2 & $ \frac{1}{16} $ & $ \frac{1}{8} $ & $ \frac{1}{32} $ & $ \frac{1}{32} $ \\
+3 & $ \frac{1}{8} $ & $ \frac{1}{8} $ & 0 & 0 \\
+4 & $ \frac{1}{16} $ & $ \frac{1}{16} $ & $ \frac{1}{16} $ & $ \frac{1}{16} $ \\
+\hline
+\end{tabular}
+
+试求：(1) $ H(\xi), H(\eta) $; (2) $ H(\xi \mid \eta), H(\eta \mid \xi) $; (3) $ H(\xi, \eta) $;
+(4) $ H(\eta)-H(\eta \mid \xi) $; (5) $ I(\xi ; \eta) $.
+
+\tcblower
+
+\begin{center}
+\begin{tabular}{|c|cccc|c|}
+\hline
+\diagbox{$ \eta $}{$ \xi $}
+ & $1$ & $2$ & $3$ & $4$ & $ \sum $ \\
+\hline $1$ & $ \frac{1}{8} $ & $ \frac{1}{16} $ & $ \frac{1}{32} $ & $ \frac{1}{32} $ & $ \frac{1}{4} $ \\
+$2$ & $ \frac{1}{16} $ & $ \frac{1}{8} $ & $ \frac{1}{32} $ & $ \frac{1}{32} $ & $ \frac{1}{4} $ \\
+$3$ & $ \frac{1}{8} $ & $ \frac{1}{8} $ & $ 0 $ & $ 0 $ & $ \frac{1}{4} $ \\
+$4$ & $ \frac{1}{16} $ & $ \frac{1}{16}$ & $ \frac{1}{16}$ & $ \frac{1}{16}$ & $ \frac{1}{4} $ \\
+\hline $\sum$ & $\frac{3}{8}$ & $\frac{3}{8}$ & $\frac{1}{8}$ & $\frac{1}{8}$ & $1 $ \\
+\hline
+\end{tabular}
+\end{center}
+对  $\xi: p(x)=\sum\limits_{y \in \mathscr{Y}} p(x, y)$, 则有：
+$$
+\begin{array}{l} 
+p(1)=p(1,1)+p(1,2)+p(1,3)+p(1,4) 
+=\frac{1}{8}+\frac{1}{16}+\frac{1}{8}+\frac{3}{8}=\frac{3}{8} \\
+p(2)=p(2,1)+p(2,2)+p(2,3)+p(2,4) 
+=\frac{1}{16}+\frac{1}{8}+\frac{1}{8}+\frac{1}{16}=\frac{3}{8} \\
+p(3)=p(3,1)+p(3,2)+p(3,3)+p(3,4) 
+=\frac{1}{32}+\frac{1}{32}+0+\frac{1}{16}=\frac{1}{8} \\
+p(4)=p(4,1)+p(4,2)+p(4,3)+p(4,4) 
+=\frac{1}{32}+\frac{1}{32}+0+\frac{1}{16}=\frac{1}{8}
+\end{array}
+$$
+因此 $ \xi $ 的边缘分布为 $ \left(\frac{3}{8}, \frac{3}{8}, \frac{1}{8}, \frac{1}{8}\right) $ .同理对 $\eta: p(y)=\sum\limits_{x \in \mathscr{X}} p(x, y)$,
+也可求得$\eta$的边缘分布为 $ \left(\frac{1}{4}, \frac{1}{4} ， \frac{1}{4}, \frac{1}{4}\right) $.于是
+$$\begin{aligned}
+     H(\xi)&=\sum_{i=1}^{4} p_{i} \log \frac{1}{p_{i}}=2 \cdot \frac{3}{8} \cdot \log _{2} \frac{8}{3}+2 \cdot \frac{1}{8} \cdot \log _{2} 8 =3-\frac{3}{4} \log _{2} 3 \\
+H(\eta)&=\sum_{i=1}^{4} p_{i} \log \frac{1}{p_{i}}=4 \cdot \frac{1}{4} \log _{2} 4=2 \\
+H(\xi, \eta)&=\sum_{x \in \mathscr{X}} \sum_{y \in \mathscr{Y}} p(x, y) \cdot \log _{2} \frac{1}{p(x, y)} 
+=4 \cdot \frac{1}{8} \cdot \log _{2} 8+6 \cdot \frac{1}{16} \cdot \log _{2} 16+4 \cdot \frac{1}{32} \log _{2} 32 \\
+&=\frac{3}{2}+\frac{3}{2}+\frac{5}{8}=\frac{29}{8} 
+\end{aligned}$$
+$$
+\begin{array}{l}
+H(\xi \mid \eta)=H(\xi, \eta)-H(\eta)=\frac{29}{8}-2=\frac{13}{8} \\
+H(\eta \mid \xi)=H(\xi, \eta)-H(\xi)=\frac{29}{8}-\left(3-\frac{3}{4} \log _{2} 3\right)=\frac{5}{8}+\frac{3}{4} \log _{2} 3 \\
+H(\eta)-H(\eta \mid \xi)=2-\left(\frac{5}{8}+\frac{3}{4} \log _{2} 3\right)=\frac{11}{8}-\frac{3}{4} \log _{2} 3 \\
+I(\xi ; \eta)=H(\xi)+H(\eta)-H(\xi, \eta) =3-\frac{3}{4} \log _{2} 3+2-\frac{29}{8} =\frac{11}{8}-\frac{3}{4} \log _{2} 3 
+\end{array}
+$$
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 设两只口袋中各有20个球，第一支口袋中有10个白球，5个黑球和5个红球; 第二只口袋中有8个白球，6个黑球和6 个红球，从每只口袋中各取一个球，试判断哪一个结果的不肯定性更大(已知: $ \log _{2} 5=2.322, \log _{2} 3=1.585 $ ).
+\tcblower
+
+当我们要判断哪个结果的不肯定性更大时，可以使用熵来衡量.
+首先，我们将第一只口袋的球的颜色作为随机变量 $\xi_1$，它的概率分布为：
+$$
+\xi_1 \sim \left(\begin{array}{ccc}\text{白} & \text{黑} & \text{红} \\ \frac{1}{2} & \frac{1}{4} & \frac{1}{4}\end{array}\right)
+$$
+其中，$\frac{1}{2}$ 表示白球的概率，$\frac{1}{4}$ 表示黑球的概率，$\frac{1}{4}$ 表示红球的概率.
+
+计算第一只口袋的熵 $H(\xi_1)$：
+$$ H\left(\xi_{1}\right)=\frac{1}{2} \log _{2} 2+\frac{1}{4} \log _{2} 4+\frac{1}{4} \cdot \log _{2} 4 \\ =\frac{1}{2}+\frac{1}{2}+\frac{1}{2}=1.5  \text{ bits}
+$$
+接下来，我们将第二只口袋的球的颜色作为随机变量 $\xi_2$，它的概率分布为：
+$$
+\xi_2 \sim \left(\begin{array}{ccc}\text{白} & \text{黑} & \text{红} \\ \frac{2}{5} & \frac{3}{10} & \frac{3}{10}\end{array}\right)
+$$
+其中，$\frac{2}{5}$ 表示白球的概率，$\frac{3}{10}$ 表示黑球的概率，$\frac{3}{10}$ 表示红球的概率.
+
+计算第二只口袋的熵 $H(\xi_2)$：
+
+$$
+\begin{aligned}
+H\left(\xi_{2}\right) & =\frac{2}{5} \log _{2} \frac{5}{2}+\frac{3}{10} \log _{2} \frac{10}{3}+\frac{3}{10} \log _{2} \frac{10}{3} \\
+&=\frac{2}{5}\left(\log _{2} 5-1\right)+\frac{3}{5}\left(\log _{2} 10-\log _{2} 3\right) \\
+&=\frac{2}{5}\left(\log _{2} 5-1\right)+\frac{3}{5}\left(1+\log _{2} 5-\log _{2} 3\right) \\
+&  =\log _{2} 5-\frac{3}{5} \log _{2} 3+\frac{1}{5} \\
+& \approx 2.322-0.6\times 1.585+0.2\\
+& =1.571 \text { bits }
+\end{aligned}
+$$
+
+所以我们得到$H(\xi_1)=1.5<1.571=H(\xi_2)$，
+比较 $H(\xi_1)$ 和 $H(\xi_2)$ 的值，我们可以得出结论：第二只口袋的结果的不肯定性更大，因为它的熵值更大. 
+
+
+
+\end{tcolorbox}
+
+
+

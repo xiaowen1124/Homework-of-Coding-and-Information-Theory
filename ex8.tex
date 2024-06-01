@@ -1,0 +1,234 @@
+\section{习题课}
+\subsection{基本概念及方法}
+1.Hamming码的构造方法
+
+2.Hamming码的性质
+
+3.Hamming码的译码
+
+4. 极长码及性质
+
+
+\subsection{课后习题}
+
+\begin{exercise}
+    试求二元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(3,2) $ 的包含陪集头和对应伴随式列表,并对在信道接收端接收到的字0000011,1111111, 1100110, 1010101分别进行译码.
+\end{exercise}
+\begin{solution}
+    二元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(3,2) $ 的校验矩阵为
+$
+H=\left(\begin{array}{lllllll}
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1
+\end{array}\right)
+$
+
+伴随式列表:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 陪集头 $ x_{i} $ & 伴随式 $ x_{i} H^{T} $ \\
+\hline 1000000 & 001 \\
+\hline 0100000 & 010 \\
+\hline 0010000 & 011 \\
+\hline 0001000 & 100 \\
+\hline 0000100 & 101 \\
+\hline 0000010 & 110 \\
+\hline 0000001 & 111 \\
+\hline
+\end{tabular}
+\end{center}
+$$
+\begin{gathered}
+(00000011)H^T =001\quad0000011\text{译为}1000011. \\
+(111111111)H^T =000\quad11111111\text{译为}1111111. \\
+(1100110)H^T =011\quad1100110\text{译为}1110110. \\
+(1010101)H^T =000\quad1010101\text{译为}1010101. 
+\end{gathered}
+$$
+\end{solution}
+
+\begin{exercise}
+试求二元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(4,2) $ 中重量分别为 $ 1,2,3,4 $ 的码字的个数.
+\end{exercise}
+\begin{solution}
+只需求出码 $ \operatorname{Ham}(4,2) $ 的重量分布多项式即可.
+$$ W_{\mathrm{Ham}(4,2)}(z)=\frac{1}{2^{4}}\left[(1+z)^{15}+15\left(1-z^{2}\right)^{7}(1-z)\right] $$
+由二项式展开定理,计算整理得:
+$$
+W_{\operatorname{Ham}(4,2)}(z)=1+35 z^{3}+105 z^{4}
+$$
+于是,二元Hamming 码 $ \operatorname{Ham}(4,2) $ 中重量为 1, 2, 3, 4 的码字的个数分别为 $ 0,0,35,105 $.
+\end{solution}
+
+\begin{exercise}
+ 写出七元Hamming 码 $ \operatorname{Ham}(2,7) $ 的校验矩阵 $ H $, 并对在信道接收端接收到的字35234106和10521360分别进行译码.
+\end{exercise}
+\begin{solution}
+七元Hamming 码 $ \operatorname{Ham}(2,7) $ 的校验矩阵为
+$$H=\left(\begin{array}{llllllll}
+0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+1 & 0 & 1 & 2 & 3 & 4 & 5 & 6
+\end{array}\right) $$
+$$
+\begin{array}{c}
+\text { (35234106) }\left(\begin{array}{ll}
+0 & 1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+1 & 3 \\
+1 & 4 \\
+1 & 5 \\
+1 & 6
+\end{array}\right)=(0\quad0),\quad (10521360)\left(\begin{array}{ll}
+0 & 1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+1 & 3 \\
+1 & 4 \\
+1 & 5 \\
+1 & 6
+\end{array}\right)=(3\quad6)=3 \times(1\quad2)
+\end{array}
+$$
+35234106 译为 35234106 . 10521360 译为 10561360 .
+\end{solution}
+
+\begin{exercise}
+ 设二元 Hamming 码 $ \operatorname{Ham}(4,2) $ 的校验矩阵为
+$$
+H=\left(\begin{array}{lllllllllllllll}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1
+\end{array}\right)
+$$
+试对在信道接收端接收到的字 011011001111000 和001100110011000分别进行译码.
+\end{exercise}
+\begin{solution}
+    $$\begin{array}{c}
+\text { (011011001111000) }\left(\begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1
+\end{array}\right)=(0110), (001100110011000)\left(\begin{array}{llll}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1
+\end{array}\right)=(1111)
+\end{array}
+$$
+
+011011001111000 译为 011010001111000 .
+
+001100110011000 译为 001100110011001 .
+\end{solution}
+
+
+\begin{exercise}
+写出三元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(3,3) $ 的校验矩阵 $ H $, 并对在信道接收端接收到的字0122100110022和2211001012020分别进行译码.
+\end{exercise}
+\begin{solution}
+$$ H=\left(\begin{array}{lllllllllllll}
+0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 2 & 1 & 2 & 2 \\
+1 & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 0 & 2 & 2 & 1
+\end{array}\right) $$
+    $$
+\begin{array}{l}
+(0122100110022)\left(\begin{array}{lll}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+1 & 0 & 2 \\
+1 & 2 & 0 \\
+1 & 1 & 2 \\
+1 & 2 & 2 \\
+1 & 2 & 1
+\end{array}\right)=(010)=1 \times(010), (2211001012020)\left(\begin{array}{lll}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+1 & 0 & 2 \\
+1 & 2 & 0 \\
+1 & 1 & 2 \\
+1 & 2 & 2 \\
+1 & 2 & 1
+\end{array}\right)=(200)=2 \times(100)
+\end{array}
+$$
+
+2211001012020 译为 2221001012020 .
+
+\end{solution}
+
+\begin{exercise}
+ 设 $ q $ 是一个素数的幂次方, 并且 $ 3 \leq n \leq q+1 $. 证明:
+$$
+A_{q}(n, 3)=q^{n-2} \text {. }
+$$
+\end{exercise}
+\begin{solution}
+    证明: 设 $ C $ 是一个 $ (n, M, 3) $ 码,在 $ C $ 中的码字去掉任意两个坐标位置所得到的向量一定两两不同, 否则 $ d(C) \leq 2 $, 与 $ d(C)=3 $ 矛盾.因此, $ M \leq q^{n-2} $. 因 $ q $ 元汉明码 $ \operatorname{Ham}(2, q) $ 的码长为
+$$
+n=q^{2}-1 / q-1=q+1
+$$
+码字个数为 $ q^{n-2} $ 个.
+因 $ A_{q}(q+1,3)=q^{(q+1)-2} $. 对 $ 3 \leq n<q+1 $, 将 $ \operatorname{Ham}(2, q) $ 的校验阵 $ H $ 去掉 $ q+1-n $ 列, 得到一个矩阵 $ H^{\prime} $, 显然 $ H^{\prime} $ 中任意两列还是线性无关的, 适当选取 $ H $ 中去掉的列, 可以保证 $ H^{\prime} $ 中存在3列线性相关, 于是 $ H^{\prime} $ 为校验阵的线性码 $ C^{\prime} $ 是一个 $ q $ 元 $ [n, n-2,3] $ 线性码, $ C^{\prime} $ 中有 $ q^{n-2} $ 个码字. 因此,对于 $ 3 \leq n \leq q+1 $,
+$$
+A_{q}(n, 3)=q^{n-2}
+$$
+\end{solution}
+
+
+
+\begin{exercise}
+确定二元 Hamming 码 $ \operatorname{Ham}(r, 2) $ 中重量为 3 的码字的个数 $ A_{3} $.
+\end{exercise}
+\begin{solution}
+ $ W_{L}(z)=\frac{1}{2^{r}}\left[(1+z)^{n}+n\left(1-z^{2}\right)^{\frac{n-1}{2}}(1-z)\right] $,
+其中, $ n=2^{r}-1 $,由二项式展开定理,计算整理得:
+$$
+W_{L}(z)=\frac{1}{2^{r}}\left[\left(\cdots+C_{n}^{3} z^{3}+\cdots\right)+n C_{\frac{n-1}{2}}^{1} z^{3}\right],
+$$
+$ z^{3} $ 的系数为 $ \frac{1}{2^{r}}\left(C_{n}^{3}+n C_{\frac{n-1}{2}}^{1}\right)=\frac{n(n-1)}{6} $.
+故重量为 3 的码字的个数 $ A_{3}=\frac{n(n-1)}{6} $.
+\end{solution}
+

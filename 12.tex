@@ -1,0 +1,159 @@
+\newpage
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+试求二元Hamming 码Ham $ (3,2) $ 的包含培集头和对应伴随式列表, 并对在信道接收端接收到的字0000011, 1111111, 1100110, 1010101分别进行译码.
+ \tcblower
+二元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(3,2) $ 的校验矩阵为
+$
+H=\left(\begin{array}{lllllll}
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1
+\end{array}\right)
+$
+
+伴随式列表:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 陪集头 $ x_{i} $ & 伴随式 $ x_{i} H^{T} $ \\
+\hline 1000000 & 001 \\
+\hline 0100000 & 010 \\
+\hline 0010000 & 011 \\
+\hline 0001000 & 100 \\
+\hline 0000100 & 101 \\
+\hline 0000010 & 110 \\
+\hline 0000001 & 111 \\
+\hline
+\end{tabular}
+\end{center}
+$$
+\begin{gathered}
+(0000011)H^T =001\Rightarrow 000011\text{译为}1000011. \\
+(1111111)H^T =000\Rightarrow 1111111\text{译为}1111111. \\
+(1100110)H^T =011\Rightarrow1100110\text{译为}1110110. \\
+(1010101)H^T =000\Rightarrow1010101\text{译为}1010101. 
+\end{gathered}
+$$
+ \end{tcolorbox}
+
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+ 写出七元Hamming 码 $ \operatorname{Ham}(2,7) $ 的校验矩阵 $ H $, 并对在信道接收端接收到的字35234106和10521360分别进行译码.
+ \tcblower
+
+七元Hamming 码 $ \operatorname{Ham}(2,7) $ 的校验矩阵为$H=\left(\begin{array}{llllllll}
+0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+1 & 0 & 1 & 2 & 3 & 4 & 5 & 6
+\end{array}\right) $
+
+$$
+\begin{array}{c}
+x_1H^{T}= (35234106) \left(\begin{array}{ll}
+0 & 1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+1 & 3 \\
+1 & 4 \\
+1 & 5 \\
+1 & 6
+\end{array}\right)=(0\quad0),\quad x_2H^{T}= (10521360)\left(\begin{array}{ll}
+0 & 1 \\
+1 & 0 \\
+1 & 1 \\
+1 & 2 \\
+1 & 3 \\
+1 & 4 \\
+1 & 5 \\
+1 & 6
+\end{array}\right)=(3\quad6)=3 (1\quad2)
+\end{array}
+$$
+因此，$x_1$没有发生错误，即$35234106$ 译为 $35234106$ . $x_2$在第4个位置发生错误，$10521360$ 译为$10521360-00030000= 10561360$ .
+ \end{tcolorbox}
+
+
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+ 设二元 Hamming 码 $ \operatorname{Ham}(4,2) $ 的校验矩阵为
+$$
+H=\left(\begin{array}{lllllllllllllll}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1
+\end{array}\right)
+$$
+试对在信道接收端接收到的字 011011001111000 和001100110011000分别进行译码.
+
+ \tcblower
+    $$\begin{array}{c}
+\text { (011011001111000) }\left(\begin{array}{cccc}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1
+\end{array}\right)=(0110), (001100110011000)\left(\begin{array}{llll}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1
+\end{array}\right)=(1111)
+\end{array}
+$$
+
+第6个位置发生错误，于是011011001111000 译为 011010001111000 .
+
+第15个位置发生错误，于是001100110011000 译为 001100110011001 .
+
+ \end{tcolorbox}
+
+
+
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+写出三元 $ \operatorname{Hamming} $ 码 $ \operatorname{Ham}(3,3) $ 的校验矩阵 $ H $, 并对在信道接收端接收到的字0122100110022和2211001012020分别进行译码.
+ \tcblower
+ $n=\frac{3^{3}-1}{3-1}=\frac{26}{2}=13$
+$$
+\begin{array}{c}
+H=\left(\begin{array}{lllllllllllll}
+0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 \\
+1 & 0 & 1 & 2 & 0 & 1 & 2 & 0 & 1 & 2 & 0 & 1 & 2
+\end{array}\right) \\
+x_{1}=0122100110022 \quad x_{1} H^{\top}=(111) \\
+x_{2}=2211001012020 \quad x_{2} H^{\top}=(0 1 0) \\
+\end{array}
+$$
+
+$x_1$ 在第9个位置发生错误，于是译为$x_{1}-0000000010000=0122100100022$
+
+$x_{2}$ 在第 2 个位置发生错误，于是译为$x_{2}-0100000000000=2111001012020$
+ \end{tcolorbox}

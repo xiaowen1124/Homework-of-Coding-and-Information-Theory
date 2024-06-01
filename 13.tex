@@ -1,0 +1,32 @@
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+试求二元Hamming 码Ham(4,2) 中重量分别为 $ 1,2,3,4 $ 的码字的个数.
+ \tcblower
+$r=4$, 于是$n=2^r-1=15$,代入重量分布多项式中得：
+$$
+W_{\text {Ham }(4,2)}(z)=\frac{1}{2^{4}}\left[(1+z)^{15}+15\left(1-z^{2}\right)^{7}(1-z)\right]
+$$
+由二项式展开定理, 计算整理得:
+$$
+W_{\operatorname{Ham}(4,2)}(z)=1+35 z^{3}+105 z^{4}
+$$
+于是, 二元 Hamming 码 $ \operatorname{Ham}(4,2) $ 中重量为 $ 1,2,3,4 $ 的码字的个数分别为 $ 0,0,35,105 $.
+ \end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+确定二元Hamming 码 $ \operatorname{Ham}(r, 2) $ 中重量为 3 的码字的个数 $ A_{3} $.
+ \tcblower
+ 二元Hamming 码$ \operatorname{Ham}(r, 2) $的重量分布多项式为
+ $ W_{L}(z)=\frac{1}{2^{r}}\left[(1+z)^{n}+n\left(1-z^{2}\right)^{\frac{n-1}{2}}(1-z)\right] $, 其中, $ n=2^{r}-1 $, 由二项式展开定理, 计算整理得:
+$$
+W_{L}(z)=\frac{1}{2^{r}}\left[\left(\cdots+C_{n}^{3} z^{3}+\cdots\right)+(\cdots+n C_{\frac{n-1}{2}}^{1} z^{3}+\cdots)\right]
+$$
+$ z^{3} $ 的系数为 $ \frac{1}{2^{r}}\left(C_{n}^{3}+n C_{\frac{n-1}{2}}^{1}\right)=\frac{1}{n+1}\cdot\frac{(n-1)n(n+1)}{6}=\frac{n(n-1)}{6} $. 故重量为 3 的码字的个数 $ A_{3}=\frac{n(n-1)}{6} $.
+ \end{tcolorbox}
+
+
+ 

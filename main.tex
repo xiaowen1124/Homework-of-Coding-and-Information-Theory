@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=2cm]{geometry}
+%\usepackage[utf8]{inputenc}
+%\usepackage{ebgaramond-maths}
+\usepackage{ctex}
+%==Math & Physics Packages==
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{mathrsfs}
+\usepackage{setspace}
+\usepackage{physics}
+\usepackage{cancel}
+\usepackage{nicefrac}
+\usepackage{extarrows}
+
+\usepackage{graphicx}
+ \usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{diagbox}
+
+
+%==Image-related Packages==
+\usepackage{graphics, graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{xcolor}
+\usepackage{fourier-orns}
+\usepackage{lipsum}
+%==Colour Palette==
+\definecolor{merah}{HTML}{F4564E}
+\definecolor{merahtua}{HTML}{89313E}
+\definecolor{biru}{HTML}{60BBE5}
+\definecolor{birutua}{HTML}{412F66}
+\definecolor{hijau}{HTML}{59CC78}
+\definecolor{hijautua}{HTML}{366D5B}
+\definecolor{kuning}{HTML}{FFD56B}
+\definecolor{jingga}{HTML}{FBA15F}
+\definecolor{ungu}{HTML}{8C5FBF}
+\definecolor{lavender}{HTML}{CBA5E8}
+\definecolor{merjamb}{HTML}{FFB6E0}
+
+%==Theorems==
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,theorems}
+\usepackage{changepage}%用于调整页面布局，例如改变页面的宽度或高度。
+\renewcommand{\thesection}{\arabic{section}.}
+
+\makeatletter
+
+        % Definition
+%	\newtcbtheorem{dfn}{1}
+%	{breakable,enhanced,arc=0mm,outer arc=0mm,
+%		boxrule=0pt,toprule=1pt,leftrule=0pt,bottomrule=1pt, rightrule=0pt,left=0.2cm,right=0.2cm,
+	%	titlerule=0.5em,toptitle=0.1cm,bottomtitle=-0.1cm,top=0.2cm,
+	%	colframe=white!10!biru,colback=white!90!biru,coltitle=white,
+     %       coltext=birutua!60!gray, title style={white!10!biru}, before skip=8pt, after skip=8pt,
+		%fonttitle=\bfseries,fontupper=\normalsize}{dfn}
+ 
+%==Formatting Packages==
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage[toc]{multitoc}
+
+%==Layouting Packages==
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+% Uncomment jika perlu
+\fancyhead[R]{xiaowen}
+\fancyhead[L]{Coding and Information Theory}
+%\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+%\fancyfoot[R]{\thepage}
+
+
+
+
+
+
+\renewcommand\headrule{%定义页眉中的水平线样式的
+	\vspace{-6pt}%-1pt表示向上调整1个点的垂直间距
+	\hrulefill
+	\raisebox{-2pt}
+	\hrulefill}
+
+\renewcommand\footrule{%
+	\hrulefill
+	\raisebox{-2.1pt}
+	%{\quad\floweroneleft\decoone\floweroneright\quad}%
+	\hrulefill}
+  
+%Reference and Bibliography Packages==设置超链接的样式和颜色
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={black},
+    citecolor={biru!70!black},
+    urlcolor={biru!80!black}
+}
+
+\numberwithin{equation}{section}%用于在 LaTeX 中设置公式编号的格式。具体来说，这行代码将使公式编号包含章节号，例如“1.1”表示第一章的第一个公式，以此类推。
+%这行代码的作用是将公式编号设置为按节（section）进行编号，即每个节开始时公式编号会重新计数。这样可以更清晰地显示公式的编号，使其与章节结构相对应。
+
+\begin{document}
+\input{1}
+\input{2}
+\input{3}
+\input{4}
+\input{5}
+\input{6}
+\input{7}
+\input{8}
+\input{9}
+\input{10}
+\input{11}
+\input{12}
+\input{13}
+\input{14}
+\end{document}

@@ -1,0 +1,274 @@
+\newpage
+\section{第八次课后作业}
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+
+码 $ C $ 至多可纠正 $ t $ 个错误的充分必要条件是码 $ C $ 的最小距离 $ d(C)= $ $\underline{\hspace{2em}}$.
+
+ \tcblower
+定理：码$C$至多可纠正$t$个错误的充分必要条件为$d(C)=2t+1$或$d(C)=2t+2$.
+ \end{tcolorbox}
+
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+
+对于任意二元 $ (3, M, 2) $ 码, 一定有 $ M \leq $ $\underline{\hspace{2em}}$.
+
+ \tcblower
+使用Singleton界定理可以帮助我们确定编码理论中线性码的一个上界.Singleton界定理指出，对于任意的 \(q\)-元 \((n, M, d)\) 码，其码长为 \(n\)、码字数为 \(M\) 以及最小汉明距离为 \(d\)，我们有：
+
+\[
+M \leq q^{n-d+1}
+\]
+
+对于一个二元 \((3, M, 2)\) 码，其中 \(q = 2\)（因为是二元码）、\(n = 3\)（码字长度为3）和 \(d = 2\)（最小汉明距离为2）,因此
+   \[
+   M \leq 2^{3-2+1} = 2^2 = 4
+   \]
+ \end{tcolorbox}
+
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+
+设二元 $ [4,2] $ 线性码 $ L=\{0000,1100,0011,1111\} $, 则 $ L $ 的最小距离为 $\underline{\hspace{2em}}$.
+
+ \tcblower
+为了找出给定的二元线性码 \( L = \{0000, 1100, 0011, 1111\} \) 的最小距离，我们需要计算码集中任意两个不同码字之间的汉明距离，然后找出这些距离中的最小值.
+
+汉明距离是指两个码字在相应位上不同的位数.对于线性码，最小距离也可以通过找出除了零码字以外的码字的最小重量（即非零位的数量）来得到，因为线性码的任意两个码字的差也是该码中的一个码字.
+
+我们用两种方法分别来计算：
+
+1. 码字重量分析：
+
+   \( 0000 \) 的重量为 \( 0 \)（无需考虑，因为我们寻找的是非零码字的最小重量）.
+   
+    \( 1100 \) 的重量为 \( 2 \).
+    
+    \( 0011 \) 的重量为 \( 2 \).
+    
+    \( 1111 \) 的重量为 \( 4 \).
+
+2. 码字间的汉明距离：
+
+    从 \( 0000 \) 到 \( 1100 \)，距离为 \( 2 \).
+    
+    从 \( 0000 \) 到 \( 0011 \)，距离为 \( 2 \).
+    
+    从 \( 0000 \) 到 \( 1111 \)，距离为 \( 4 \).
+    
+    从 \( 1100 \) 到 \( 0011 \)，距离为 \( 4 \).
+    
+    从 \( 1100 \) 到 \( 1111 \)，距离为 \( 2 \).
+    
+    从 \( 0011 \) 到 \( 1111 \)，距离为 \( 2 \).
+
+由上面的计算可见，码字之间的最小汉明距离是 \( 2 \)，这也是该码的最小距离.因此，给定的二元线性码 \( L \) 的最小距离为 \( 2 \).
+ \end{tcolorbox}
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 填空题]
+
+对于任意 $ n \geq 1, \quad A_{q}(n, n)= $  $\underline{\hspace{2em}}$.
+
+ \tcblower
+设 $ C $ 是一个 $ q $ 元 $ (n, M, n) $ 码, 则 $ \forall x, y \in C, x=\left(x_{1}, \cdots, x_{n}\right), y=\left(y_{1}, \cdots, y_{n}\right), x_{i} \neq y_{i}, i=  1, \cdots, n $, 因此, 所有码字在一个固定分量位置上出现的字符一定互不相同, 于是 $ M \leq q $. 由此可知 $ A_{q}(n, n) \leq q $, 又码长为 $ n $ 的 $ q $ 元重复码是一个 $ q $ 元 $ (n, q, n) $ 码, 故 $ A_{q}(n, n)=q $.
+ \end{tcolorbox}
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+(1) 证明: 对任意三元 $ (3, M, 2) $ 码, 一定有 $ M \leq 9 $.
+
+(2) 证明: 三元 $ (3,9,2) $ 码一定存在. 于是, $ A_{3}(3,2)=3^{2} $.
+
+(3) 证明: $ A_{q}(3,2)=q^{2} $, 其中 $ q \geq 2, q $ 是素数的幂次方.
+
+ \tcblower
+(1) 对于任意的三元 $(3, M, 2)$ 码，根据 Singleton界，$A_q(n, d) \leq q^{n-d+1}$, 将$n=3, d=2, q=3$（因为是三元码，所以$q=3$）代入上述公式：
+$A_3(3, 2) \leq 3^{3-2+1} = 3^{2} = 9$.这表明在保证任意两个码字之间的汉明距离至少为 $2$ 的情况下，码字总数$M$不能超过 $9$.
+因此，任何$(3, M, 2)$码的码字数量$M$最大为 $9$, 这就证明了$M \leq 9$.
+
+ (2) 为了证明，我们需要构造一个具体的 $(3,9,2)$ 码.考虑以下码集$C$：
+$$C = \{000, 111, 222, 012, 021, 120, 102, 210, 201\}$$
+这 $9$ 个码字确保了任意两个码字之间的汉明距离至少为 $2$. 由于我们找到了一个有效的$(3,9,2)$码，因此$A_3(3,2) \geq 9$.结合前面的Singleton界结果$A_3(3,2) \leq 9$，可以断定$A_3(3,2) = 9$.
+
+ (3) 使用Singleton界：
+\[ A_q(3, 2) \leq q^{3-2+1} = q^{2} \]
+我们需要构造一个$q$元$(3, q^2, 2)$码来证明存在性.考虑码集：
+\[ C = \{(a, b, a+b) \mid a, b \in \mathbb{F}_q\} \]
+其中$\mathbb{F}_q$是有$q$个元素的有限域.这种构造中，每个码字形式为$(a, b, a+b)$，其中每个$a$和$b$可以独立选择，因此共有$q^2$个码字.即$|C| = q^2$.由于对于任何两个不同的码字$(a, b, a+b)$和$(a', b', a'+b')$，至少在两个坐标上有不同（如果$a \neq a'$那么$a+b \neq a'+b'$），所以这种码的最小汉明距离$d(C)=2$.
+
+因此，$A_q(3, 2) = q^2$.
+ \end{tcolorbox}
+
+
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+试说明对于二元重复码 $ C=\{00 \cdots 0,11 \cdots 1\} $, 它是一个二元 $ (n, 2, n) $ 码, 当 $ n $ 为奇数时, $ C $ 是完备码. 另外, 只含一个码字的码以及由 $ V(n, q) $ 构成的 $ q $ 元 $ \left(n, q^{n}, 1\right) $ 码都是完备码.
+
+ \tcblower
+设 $ C $ 是一个q元 $ (n, M, 2 t+1) $ 码. 如果
+$$
+M\left\{\left(\begin{array}{l}
+n \\
+0
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+1
+\end{array}\right)(q-1)+\left(\begin{array}{l}
+n \\
+2
+\end{array}\right)(q-1)^{2}+\cdots+\left(\begin{array}{l}
+n \\
+t
+\end{array}\right)(q-1)^{t}\right\}=q^{n},
+$$
+则称 $ C $ 为完备码 (perfect code).
+
+(1)对于码长为 $ n $ 的二元重复码
+$$
+C_{1}=\{\underbrace{00 \cdots 0}_{n}, \underbrace{11 \cdots 1}_{n}\} .
+$$
+$$
+\begin{aligned}
+&2\left\{\left(\begin{array}{l}
+n \\
+0
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+1
+\end{array}\right)+\right.  \left.\left(\begin{array}{l}
+n \\
+2
+\end{array}\right)+\cdots+\left(\begin{array}{l}
+n \\
+t
+\end{array}\right)\right\} \\
+= & \left(\begin{array}{l}
+n \\
+0
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+1
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+2
+\end{array}\right)+\cdots+\left(\begin{array}{c}
+n \\
+l
+\end{array}\right)+\left(\begin{array}{c}
+n \\
+t+1
+\end{array}\right)+\cdots \\
+& +\left(\begin{array}{c}
+n \\
+n-2
+\end{array}\right)+\left(\begin{array}{c}
+n \\
+n-1
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+n
+\end{array}\right) \\
+& =(1+1)^{n} \\
+& =2^{n} .
+\end{aligned}
+$$
+因此, 当码长 $ n $ 为奇数时, 二元重复码 $ C_{1} $ 是一个完备的 $ (n, 2, n) $ 码.
+
+(2)对于只含有一个码字的码 $C_{2}=\{x\} \subset V(n, q)$, 当在信道发送端发送码字 $x$ 后, 在信道接收端不管接收到什么向量都将译为码字 $x$. 这就是说, 码 $ C_{2} $ 可以检查和纠正码字在信道传输过程中发生的任何数目的锴误. 因此, 码 $C_{2}$ 可纠正的错误数目为 $ t =n $. 显然,
+$$
+\begin{aligned}
+\left(\begin{array}{l}
+n \\
+0
+\end{array}\right)+\left(\begin{array}{l}
+n \\
+1
+\end{array}\right)(q-1) & +\left(\begin{array}{l}
+n \\
+2
+\end{array}\right)(q-1)^{2}+\cdots+\left(\begin{array}{l}
+n \\
+n
+\end{array}\right)(q-1)^{n} \\
+& =(1+(q-1))^{n} \\
+& =q^{n} .
+\end{aligned}
+$$
+因此, 只含有一个码字的码 $ C_{2} $ 是完备码.
+
+(3)对于码 $ C_{3}=V(n, q) $, 其码字个数为 $ q^{n} $. 最小距离为 1 , 可纠正的锴误数目为 $ t=0 $. 显然, 对于 $q $ 元 $ \left(n, q^{n}, 1\right) $ 码$ C_{3} $. 满足定义. 因此, $ C_3=V(n, q) $ 是完备码.
+
+ \end{tcolorbox}
+
+
+
+   \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+对于任意 $ n \geq 1 $, 试确定 $ A_{q}(n, n) $.
+
+ \tcblower
+
+
+设 $ C $ 是一个 $ q $ 元 $ (n, M, n) $ 码，则 $ C $ 中任意两个不同的码字 $ \boldsymbol{x} $ 和 $ \boldsymbol{y} $ 的 Hamming 距离都是 $ n $, 也就是说, $ \boldsymbol{x} $ 和 $ \boldsymbol{y} $ 的 $ n $ 个分量一定互不相同. 于是,对于任意一个分量位置 $ i$, $C $ 中 $ M $ 个码字的第 $ i $ 个分量一定互不相同. 因此, $ M \leq q $. 另一力面, 我们已经知道码长为 $ n $ 的 $ q $ 元重复码是一个 $ (n, q, n) $ 码. 因此, $ A_{q}(n, n)=q $.
+ \end{tcolorbox}
+
+
+
+\newpage
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+试说明对于二元重复码 $ C=\{00 \cdots 0,11 \cdots 1\} $, 它是一个二元 $ (n, 2, n) $ 码, 当 $ n $ 为奇数时, $ C $ 是完备码. 另外, 只含一个码字的码以及由 $ V(n, q) $ 构成的 $ q $ 元 $ \left(n, q^{n}, 1\right) $ 码都是完备码.
+
+ \tcblower
+(1) 二元重复码 \( C=\{00 \cdots 0, 11 \cdots 1\} \) 是一个二元 \( (n, 2, n) \) 码，当 \( n \) 为奇数时, \( C \) 是完备码.
+
+二元重复码 \( C \) 包含两个码字：全0和全1，每个码字长度为 \( n \).
+最小汉明距离\( d = n \) 是因为两个码字在每个位上都不同.
+
+验证完备码条件：
+完备码的定义要求：
+$$
+M \left( \sum_{i=0}^t \binom{n}{i} \right) = 2^n,
+$$
+其中 \( M = 2 \) 是码字数量，\( t = \frac{n-1}{2} \).
+
+由于二项式定理给出：
+$$
+\sum_{i=0}^n \binom{n}{i} = 2^n,
+$$
+利用对称性，当 \( n \) 为奇数时：
+$$
+\sum_{i=0}^{\frac{n-1}{2}} \binom{n}{i} = \sum_{i=\frac{n+1}{2}}^n \binom{n}{i},
+$$
+因此，
+$$
+2 \left( \sum_{i=0}^{\frac{n-1}{2}} \binom{n}{i} \right) = 2^n,
+$$
+满足完备码的条件.因此，当 \( n \) 为奇数时，二元重复码 \( C \) 是完备码.
+
+
+(2) 只含一个码字的码 \( C_2=\{x\} \) 以及由 \( V(n, q) \) 构成的 \( q \) 元 \( (n, q^n, 1) \) 码都是完备码.
+
+只含一个码字的码 \( C_2 \)： 任何接收的向量都被解释为唯一的码字 \( x \). 纠正的错误数目 \( t = n \)（最大可能的错误数目）.
+
+完备码条件为：
+$$
+\left( \sum_{i=0}^n \binom{n}{i} (q-1)^i \right) = q^n.
+$$
+由于二项式定理，上式变为 \( (1 + (q-1))^n = q^n \)，显然满足.因此 \( C_2 \) 是完备码.
+
+(3) 由 \( V(n, q) \) 构成的 \( q \) 元 \( (n, q^n, 1) \) 码 \( C_3 \)： 包括所有 \( n \)-维向量，错误纠正个数 \( t = 0 \).
+ 由于覆盖了整个 \( n \)-维空间，满足完备码条件，即有 \( q^n = q^n \)，所以 \( C_3 \) 也是完备码.
+\end{tcolorbox}

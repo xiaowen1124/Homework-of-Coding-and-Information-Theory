@@ -1,0 +1,401 @@
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+ 设 $ p $ 是一个素数.\\
+(1)在 $ F_{p} $ 上将 $ x^{p}-1 $ 分解成不可约多项式的乘积.\\
+(2) 在 $ F_{p} $ 上将 $ x^{p-1}-1 $ 分解成不可约多项式的乘积.
+ \tcblower
+当 $p$ 是素数时，我们可以利用特征为 $p$ 的有限域 $F_{p}$ 上的性质来分解多项式 $x^{p}-1$ 和 $x^{p-1}-1$.
+
+(1) 对于 $x^{p}-1$，我们可以利用二项式定理展开 $(x-1)^p$.在有限域 $F_{p}$ 中，二项式系数 $\binom{p}{k}$ 对 $p$ 取模后都为 $0$（当 $1 < k < p$）.因此，展开后除了首尾两项，其他所有的项都被 $p$ 整除，而首尾两项就是 $x^{p}$ 和 $-1$，因此我们可以得到：
+\[ x^{p}-1 = (x-1)^{p} \]
+
+(2) 对于 $x^{p-1}-1$，我们可以利用费马小定理.根据费马小定理，对于任意 $a \in F_{p}$ 且 $a \neq 0$，都有 $a^{p-1} \equiv 1 \pmod{p}$.因此，$x^{p-1}-1$ 在 $F_{p}$ 上有 $p-1$ 个根，分别是 $1, 2, \ldots, p-1$.因此，我们可以将其分解为一次多项式的乘积：
+\[ x^{p-1}-1 = (x-1)(x-2)\cdots(x-(p-1)) \]
+
+这样，我们就完成了 $x^{p}-1$ 和 $x^{p-1}-1$ 在有限域 $F_{p}$ 上的分解.
+ \end{tcolorbox}
+
+
+
+ 
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+ 在 $ F_{3} $ 上将 $ x^{4}-1 $ 分解成不可约多项式的乘积, 确定所有码长为 4 的三元循环码,并写出每一个码的生成矩阵和校验矩阵.
+ \tcblower
+在三元域 ${\mathbb{F}}_{3}$ 上
+$$
+x^{4}-1=(x-1)(x+1)\left(x^{2}+1\right)=(x+2)(x+1)\left(x^{2}+1\right) 
+$$
+
+$x + 2$ 是一个一次多项式.在任何域上，一次多项式都是不可约的，因为它们没有非平凡的因子.所以在 ${\mathbb{F}}_{3}$ 上， $x + 2$ 是不可约的.同理， $x + 1$ 也在 ${\mathbb{F}}_{3}$ 上不可约.对于 $x^{2} + 1$ ，我们需要检查它是否有在 ${\mathbb{F}}_{3}$ 上的根.如果它没有根，那么它就是不可约的.我们检 查 ${\mathbb{F}}_{3}$ 中的所有元素:
+
+1. $x = 0$ :$0^{2} + 1 = 1 {\neq} 0$
+
+2. $x = 1$ :$1^{2} + 1 = 1 + 1 = 2 {\neq} 0$
+
+3. $x = 2$ :$2^{2} + 1 = 4 + 1 = 5 {\equiv} 2\quad\left( \ \operatorname{mod}\ 3 \right) {\neq} 0$
+
+由于 $x^{2} + 1$ 在 ${\mathbb{F}}_{3}$ 上没有根，所以它在 ${\mathbb{F}}_{3}$ 上是不可约的.
+
+ 长为 4 的三元循环码的生成多项式、 生成矩阵、校验矩阵和对应的码如下:
+  \end{tcolorbox}
+ $$
+\begin{array}{|c|c|c|c|c|}
+\hline
+\text{生成多项式} & \text{生成矩阵}&\text{校验多项式} & \text{校验矩阵} & V(4,3)  \text{中的码} \\
+\hline
+1 & I_4 & x^4-1=0&
+\begin{pmatrix}
+0 & 0 & 0 & 0
+\end{pmatrix}  &V(4,3)  \\
+\hline
+x -1 &
+\begin{pmatrix}
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1
+\end{pmatrix} &  x^3+x^2+x+1&
+\begin{pmatrix}
+1 & 1 & 1 & 1
+\end{pmatrix} & \begin{tabular}{l}
+$ \{0000,2100,0210,0021,1002 $, \\
+$ 1200,0120,0012,2001,1020 $, \\
+$ 0102,2010,0201,1110,0111 $, \\
+$ 1011,1101,2220,0222,2022 $, \\
+$ 2202,2211,1221,1122,2112 $, \\
+$ 2121,1212\} $
+\end{tabular} \\
+\hline
+x + 1 &
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1
+\end{pmatrix} &x^3-x^2+x-1&
+\begin{pmatrix}
+1 & -1 & 1 & -1
+\end{pmatrix} &\begin{tabular}{l}
+$ \{0000,1100,0110,0011,1001 $, \\
+$ 2200,0220,0022,2002,1020 $, \\
+$ 0102,2010,0201,1210,0121 $, \\
+$ 1012,2101,2120,0212,2021 $, \\
+$ 1202,2112,2211,1221,1122 $, \\
+$ 1111,2222\} $
+\end{tabular} \\
+\hline
+x^2 + 1 &
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix} &x^2-1&
+\begin{pmatrix}
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix} &\begin{tabular}{l}
+$ \{0000,1010,0101,2020,0202 $, \\
+$ 1212,2121,1111,2222\} $
+\end{tabular} \\
+\hline
+x^2 - 1 &
+\begin{pmatrix}
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1
+\end{pmatrix} &x^2+1&
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix} & \begin{tabular}{l}
+$ \{0000,2010,0201,1020,0102 $, \\
+$ 1122,2112,2211,1221\} $
+\end{tabular} \\
+\hline
+x^3 - x^2 + x - 1 &
+\begin{pmatrix}
+-1 & 1 & -1 & 1
+\end{pmatrix} &x+1&
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1
+\end{pmatrix} & \{0000,2121,1212\}  \\
+\hline
+x^3 + x^2 + x + 1 &
+\begin{pmatrix}
+1 & 1 & 1 & 1
+\end{pmatrix} &x-1&
+\begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 1 & -1
+\end{pmatrix} &\{0000,1111,2222\}\\
+\hline
+x^4 - 1 = 0 &
+\begin{pmatrix}
+0 & 0 & 0 & 0
+\end{pmatrix}&1 & I_4 &\{0000\}\\
+\hline
+\end{array}
+$$
+
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+ 在 $ F_{2} $ 上将 $ x^{5}-1 $ 分解成不可约多项式的乘积,确定所有码长为 5 的二元循环码, 并写出每个码的生成矩阵和校验矩阵.
+ \tcblower
+ 在 $ F_{2} $ 上, $ x^{5}-1=(x+1)\left(x^{4}+x^{3}+x^{2}+x+1\right) $所有码长为 5 的二元循环码的生成多项式,生成矩阵和校验矩阵如下:
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+\text{生成多项式} & \text{生成矩阵} & \text{校验矩阵} & V(5,2)\text{中的码} \\
+\hline
+1 & I_5 &
+\begin{pmatrix}
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} & V(5,2) \\
+\hline
+x + 1 &
+\begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1
+\end{pmatrix} &
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1
+\end{pmatrix} &
+\left\{
+\begin{array}{l}
+00000,11000 \\
+01100,00110 \\
+00011,10001 \\
+10010,01001 \\
+10100,01010 \\
+00101,11110 \\
+01111,10111 \\
+11011,11101 \\
+\end{array}
+\right\} \\
+\hline
+x^4 + x^3 + x^2 + x + 1 &
+\begin{pmatrix}
+1 & 1 & 1 & 1 & 1
+\end{pmatrix} &
+\begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1
+\end{pmatrix} &
+\{00000, 11111\} \\
+\hline
+x^5 - 1 &
+\begin{pmatrix}
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} & I_5 &
+\{00000\} \\
+\hline
+\end{array}
+$$
+ \end{tcolorbox}
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+ 
+在 $ \mathbb{F}_2 $ 上把 $ x^{3}-1 $ 分解成不可约多项式的乘积, 确定所有码长是 3 的二元循环码,并写出每个码的生成矩阵和校验矩阵.
+ \tcblower
+先将 $ x^{3}-1 $ 在二元域 $ \mathbb{F}_2$ 上分解为不可约多项式的乘积，
+$$
+x^{3} -1=(x-1)\left(x^{2}+x+1\right) =(x+1)\left(x^{2}+x+1\right) .
+$$
+因为 0 和 1 都不是多项式 $ x^{2}+x+1 $ 的根，所以 $ x^{2}+x+1 $ 在 $ \mathbb{F}_2 $ 上是不可约的.  因此 $ x+1 $ 和 $ x^{2}+x+1 $ 都是 $ \mathbb{F}_2 $ 上的不可约多项式.
+    \begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 生成多项式 & $ R_{3} $ 中的码 & $ V(3,2) $ 中的码 &生成矩阵 &校验矩阵 \\
+\hline 1 & $ R_{3} $ & $ V(3,2) $ &$I_3$ &$ \begin{pmatrix}
+   0 & 0 & 0
+   \end{pmatrix}$ \\
+\hline $ 1+x $ & $ \left\{0,1+x, x+x^{2}, 1+x^{2}\right\} $ & $ \{000,110,011,101\} $ &$\begin{pmatrix}
+   1 & 1 & 0 \\
+   0 & 1 & 1
+   \end{pmatrix}$ &$\begin{pmatrix}
+   1 & 1 & 1
+   \end{pmatrix}$\\
+\hline $ 1+x+x^{2} $ & $ \left\{0,1+x+x^{2}\right\} $ & $ \{000,111\} $ &$\begin{pmatrix}
+   1 & 1 & 1
+   \end{pmatrix}$ &$\begin{pmatrix}
+   1 & 1 & 0 \\
+   0 & 1 & 1
+   \end{pmatrix}$\\
+\hline$ x^{3}-1 $ & $ \{0\} $ & $ \{000\} $  &$\begin{pmatrix}
+   0 & 0 & 0
+   \end{pmatrix}$ &$I_3$\\
+\hline
+\end{tabular}
+ \end{center}
+ \end{tcolorbox}
+
+
+
+
+
+
+
+
+ 写出 $ R_{4} $ 中的码长为 4 的所有三元循环码.
+
+
+列表:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \text{生成多项式} & $ R_{4} $ \text{中的码} & $ V(4,3) $ \text{中的码} \\
+\hline 1 & $ R_{4} $ & $ V(4,3) $ \\
+\hline {$ 2+x $} & $ 3^{3}=27 $ 个元 & \begin{tabular}{l}
+$ \{0000,2100,0210,0021,1002 $, \\
+$ 1200,0120,0012,2001,1020 $, \\
+$ 0102,2010,0201,1110,0111 $, \\
+$ 1011,1101,2220,0222,2022 $, \\
+$ 2202,2211,1221,1122,2112 $, \\
+$ 2121,1212\} $
+\end{tabular} \\
+\hline $ 1+x $ & $ 3^{3}=27 $ 个元 & \begin{tabular}{l}
+$ \{0000,1100,0110,0011,1001 $, \\
+$ 2200,0220,0022,2002,1020 $, \\
+$ 0102,2010,0201,1210,0121 $, \\
+$ 1012,2101,2120,0212,2021 $, \\
+$ 1202,2112,2211,1221,1122 $, \\
+$ 1111,2222\} $
+\end{tabular} \\
+\hline $ 1+x^{2} $ & $ 3^{2}=9 $ 个元 & \begin{tabular}{l}
+$ \{0000,1010,0101,2020,0202 $, \\
+$ 1212,2121,1111,2222\} $
+\end{tabular} \\
+\hline $ 2+x^{2} $ & $ 3^{2}=9 $ 个元 & \begin{tabular}{l}
+$ \{0000,2010,0201,1020,0102 $, \\
+$ 1122,2112,2211,1221\} $
+\end{tabular} \\
+\hline $ 2+x+2 x^{2}+x^{3} $ & $ 3^{1}=3 $ 个元 & $ \{0000,2121,1212\} $ \\
+\hline $ 1+x+x^{2}+x^{3} $ & $ 3^{1}=3 $ 个元 & $ \{0000,1111,2222\} $ \\
+\hline$ x^{4}-1 $ & $ \{0\} $ & $ \{0000\} $ \\
+\hline
+\end{tabular}
+\end{center}
+$$ \begin{array}{l}\left(a+b x+c x^{2}\right)(2+x), a, b, c \in F_{3}, 3^{3}=27 \text { 个元; } \\ (a+b x)\left(1+x^{2}\right), a, b \in F_{3}, 3^{2}=9 \text { 个元; } \\ a\left(2+x+2 x^{2}+x^{3}\right), a \in F_{3}, 3^{1}=3 \text { 个元. }\end{array} $$
+
+
+在 $ F_{3} $ 上将 $ x^{4}-1 $ 分解成不可约多项式的乘积, 确定所有码长为 4 的三元循环码,并写出每一个码的生成矩阵和校验矩阵.
+
+
+
+
+
+$$\begin{array}{|c|c|c|}
+\hline
+\text{生成多项式} & R_4 \text{中的码} & V(4,3) \text{中的码} \\
+\hline
+1 & R_4 & V(4,3) \\
+\hline
+x + 1 & 27 \text{ 个元} & \{0000, 1100, 0110, 0011, 1001, 2200, 0220, 0022, 2002, 1020, \\
+& & \phantom{0000,}0102, 2010, 0201, 1210, 0121, 1012, 2101, 2120, 0212, 2021, \\
+& & \phantom{0000,}1202, 2112, 2211, 1221, 1122, 1111, 2222\} \\
+\hline
+x -1 & 27 \text{ 个元} & \{0000, 2100, 0210, 0021, 1002, 1200, 0120, 0012, 2001, 1020, \\
+& & \phantom{0000,}0102, 2010, 0201, 1110, 0111, 1011, 1101, 2220, 0222, 2022, \\
+& & \phantom{0000,}2202, 2211, 1221, 1122, 2112, 2121, 1212\} \\
+\hline
+x^2 + 1 & 9 \text{ 个元} & \{0000, 1010, 0101, 2020, 0202, 1212, 2121, 1111, 2222\} \\
+\hline
+x^2 - 1 & 9 \text{ 个元} & \{0000, 2010, 0201, 1020, 0102, 1122, 2112, 2211, 1221\} \\
+\hline
+x^3 + x^2 + x + 1 & 3 \text{ 个元} & \{0000, 1111, 2222\} \\
+\hline
+x^3 - x^2 + x - 1 & 3 \text{ 个元} & \{0000, 2121, 1212\} \\
+\hline
+x^4 - 1 & \{0\} & \{0000\} \\
+\hline
+\end{array}$$
+
+ 长为 4 的三元循环码的生成多项式, 生成矩阵和校验矩阵如下:
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+\text{特征多项式} & \text{生成矩阵}&\text{校验多项式} & \text{校验矩阵} \\
+\hline
+1 & I_4 & x^4-1=0&
+\begin{pmatrix}
+0 & 0 & 0 & 0
+\end{pmatrix} \\
+\hline
+x -1 &
+\begin{pmatrix}
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1
+\end{pmatrix} &  x^3+x^2+x+1&
+\begin{pmatrix}
+1 & 1 & 1 & 1
+\end{pmatrix} \\
+\hline
+x + 1 &
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1
+\end{pmatrix} &x^3-x^2+x-1&
+\begin{pmatrix}
+1 & -1 & 1 & -1
+\end{pmatrix} \\
+\hline
+x^2 + 1 &
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix} &x^2-1&
+\begin{pmatrix}
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix} \\
+\hline
+x^2 - 1 &
+\begin{pmatrix}
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1
+\end{pmatrix} &x^2+1&
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix} \\
+\hline
+x^3 - x^2 + x - 1 &
+\begin{pmatrix}
+-1 & 1 & -1 & 1
+\end{pmatrix} &x+1&
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1
+\end{pmatrix} \\
+\hline
+x^3 + x^2 + x + 1 &
+\begin{pmatrix}
+1 & 1 & 1 & 1
+\end{pmatrix} &x-1&
+\begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 1 & -1
+\end{pmatrix} \\
+\hline
+x^4 - 1 = 0 &
+\begin{pmatrix}
+0 & 0 & 0 & 0
+\end{pmatrix}&1 & I_4 \\
+\hline
+\end{array}
+$$
+

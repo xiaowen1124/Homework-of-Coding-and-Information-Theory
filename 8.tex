@@ -1,0 +1,142 @@
+\newpage
+\section{第八次课后作业}
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 选择题]
+
+设 $C$ 是一个 $q$ 元 $ (n, M, d) $ 码，则 $C$ 的码率是$(\quad )$
+
+ $A. \dfrac{M}{n} $ $\qquad$  $B. \dfrac{\log _{{q}}{M}}{{n}} $
+
+
+ \tcblower
+对于一个 $q$ 元 $(n, M, d)$ 码，其中 $n$ 为码字长度，$M$ 为码字个数，$d$ 为最小距离，码率 $R(C)$ 定义为有效信息位与总位数之比，即 $R(C) = \frac{k}{n}$，其中 $k = \log_{q} M$ 为每个码字中的有效信息位数.
+
+因此，码率 $R(C)$ 可表示为 $R(C) = \frac{\log_{q} M}{n}$，选项 $B. \frac{\log_{q} M}{n}$ 是正确的.
+ \end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 选择题]
+
+设二元码 $ C=\{1100,0101,1010\} $ ，则码 $ C $ 的最小距离是 $(\quad )$
+
+$A. 1 \qquad  B. 2 \qquad  C. 3$
+
+ \tcblower
+对于二元码 $ C=\{1100,0101,1010\} $，我们需要计算所有可能的码字对之间的Hamming距离，并找出最小的距离.给定码 $ C $，我们可以计算得到： $d(1100, 0101) = 2$, $d(1100, 1010) = 2$, $d(0101, 1010) = 4$. 因此，码 $ C $ 的最小距离为 $ d(C) = 2 $.所以选项 $B. 2$ 是正确的.
+ \end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 选择题]
+
+ 设 $ C $ 是一个二元 $ (5,4,3) $ 码，则 $ C $ 至多可纠正的错误个数$(\quad )$
+
+$A. 1 \qquad  B. 2 \qquad  C. 3$
+
+ \tcblower
+对于一个二元 $(n, M, d)$ 码，其最大可纠正的错误个数为 $t = \lfloor \frac{d-1}{2} \rfloor$.在这里，$d=3$，所以最大可纠正的错误个数为 $t = \lfloor \frac{3-1}{2} \rfloor = 1$.
+
+因此，$C$ 是一个二元 $(5, 4, 3)$ 码，至多可纠正的错误个数为 $1$，选项 $A. 1$ 是正确的.
+
+（定理：码$C$至多可纠正$t$个错误的充分必要条件为$d(C)=2t+1$或$d(C)=2t+2$.）
+ \end{tcolorbox}
+
+
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 选择题]
+
+设 $ C $ 是一个二元 $ (7 , 16 , 3 )$  码（如三阶二元Hamming码），则 $C$ 至多可检查的错误个数是$(\quad )$
+
+$A. 1 \qquad  B. 2 \qquad  C. 3$
+ \tcblower
+根据定理：码$C$至多可检查$t$个错误的充分必要条件为$d(C)=t+1$.
+
+因此，对于二元 $(7, 16, 3)$ 码，至多可检查的错误个数为 $2$，选项 $B. 2$ 是正确的.
+ \end{tcolorbox}
+
+
+\newpage
+ \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+设 $ C=\{11100,01001,10010,00111\} $ 是一个二元 $ (5,4) $ 码
+
+(1) 求码 $ C $ 的最小距离.
+
+(2)根据最小距离译码原则,对接收到的字 10000,01100 , 00100分别进行译码.
+
+(3)计算码 $ C $ 的码率.
+ \tcblower
+(1)
+要求码 $ C $ 的最小距离，我们需要计算所有可能的码字对之间的Hamming距离，并找出最小的距离.给定码 $ C=\{11100,01001,10010,00111\} \subset V(5,4)$， 令 $x_{1}  =11100, x_{2}=01001, x_{3}=10010, x_{4}=00111 $.我们可以计算得到：
+$$
+\begin{aligned}
+d\left(x_{1}, x_{2}\right) & =3, d\left(x_{1}, x_{3}\right)=3, d\left(x_{1}, x_{4}\right)=4 \\
+d\left(x_{2}, x_{3}\right) & =4, d\left(x_{2}, x_{4}\right)=3, d\left(x_{3}, x_{4}\right)=3 \\
+\end{aligned}
+$$
+因此$d(c)=\min \left\{d\left(x_{i}, x_{j}\right) \mid x_{i}, x_{j} \in C, x_{i} \neq x_{j}, i, j=1,2,3,4\right\} =3$
+
+(2) 根据最小距离译码原则，我们选择收到的字与码 $ C $ 中距离最近的码字进行译码.
+对于接收到的字 10000：设 $ x=10000 $ ，则
+$$
+d\left(x, x_{1}\right)=2, d\left(x, x_{2}\right)=3, d\left(x, x_{3}\right)=1, d\left(x, x_{4}\right)=4
+$$
+因此将 $x$ 译为 $x_{3}$ ，即接收到的字 10000 应当译码为 10010
+
+对于接收到的字 01100：设 $ y=01100 $ ，则
+$$
+d\left(y, x_{1}\right)=1, d\left(y, x_{2}\right)=2, d\left(y, x_{3}\right)=4, d\left(y, x_{4}\right)=3
+$$
+因此将 $ y $ 译为 $ x_{1} $. 即 $ 01100 \rightarrow 11100 $
+
+对于接收到的字 00100：设 $ z=00100 $ ，则
+$ d\left(z, x_{1}\right)=2, d\left(z, x_{2}\right)=3, d\left(z, x_{3}\right)=3, d\left(z, x_{4}\right)=2 $
+因此将$z$ 译为 $ x_{1} $ 或 $ x_{4} $ ，即 $ 00100 \rightarrow 11100 $ 或 $ 00100 \rightarrow 00111 $
+
+(3) 对于二元 $(5,4)$ 码 $ C $，其中 $ M = 4 $（共有4个码字），$ n = 5 $（每个码字长度为5位）.根据码率公式 $ R(C) = \frac{\log_{2} M}{n} $，我们有：
+$$
+R(C) = \frac{\log_{2} 4}{5} = \frac{2}{5}
+$$
+因此，码 $ C $ 的码率为 $ \frac{2}{5} $.
+ \end{tcolorbox}
+
+\newpage
+  \begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 解答题]
+
+设 $ C=\{00000000,00001111,00110011,00111100\} $ 是一个二元 $ (8,4) $ 码.
+
+(1) 计算码 $ C $ 中不同码字的Hamming距离和码 $ C $ 的最小距离.
+
+(2) 在一个二元码中, 如果把某一个码字中的 0 和 1 互换,即将 0 换为 1,1 换为 0 , 则我们将所得的字称为原码字的补. 一个二元码的所有码字的补构成的集合称为原码的补码. 求码 $ C $ 的补码, 并求补码中所有不同码字之间的Hamming距离和补码的最小距离.它们与(1)中的结果有什么关系?
+
+(3) 将(2)中的结果推广到一般的二元码.
+ \tcblower
+
+(1)令 $x_{1}=00000000, x_{2}=00001111, x_{3}=00110011, x_{4}=00111100$ 
+$$
+\begin{array}{l}
+d\left(x_{1}, x_{2}\right)=4, d\left(x_{1}, x_{3}\right)=4, d\left(x_{1}, x_{4}\right)=4 \\
+d\left(x_{2}, x_{3}\right)=4, d\left(x_{2}, x_{4}\right)=4, d\left(x_{3}, x_{4}\right)=4 \\
+\end{array}
+$$
+因此 $ d(c)=4 $
+
+(2) 设补码 $ \overline{C}=\{11111111 $ ， $ 1110000 ， 11001100 ， 11000011\} $,
+$\overline{C}$ 中的码字分别记作 $ y_{1}, y_{2} ， y_{3} ， y_{4} $ ，则
+$$
+\begin{array}{l}
+d\left(y_{1}, y_{2}\right)=4, d\left(y_{1}, y_{3}\right)=4, d\left(y_{1}, y_{4}\right)=4 \\
+d\left(y_{2}, y_{3}\right)=4, d\left(y_{2}, y_{4}\right)=4, d\left(y_{3}, y_{4}\right)=4
+\end{array}
+$$
+因此 $ d\left(\overline{C}\right)=4 $, 对比(1)可知， $C$ 的补码中码字间
+的 Hamming 距离与 $ C $ 相对应的码字间 Hamming
+距离相同且 $C$ 的补码的最小距离与 $C$ 的最小距离相同.
+
+(3) 对于一般的二元码，任取原码中两个不同码字 $ x = x_1 x_2 \ldots x_n $ 和 $ y = y_1 y_2 \ldots y_n $，其补码分别为 $ \bar{x} = \bar{x_1} \bar{x_2} \ldots \bar{x_n} $ 和 $ \bar{y} = \bar{y_1} \bar{y_2} \ldots \bar{y_n} $.其中 $ x_i,y_i \in \{0, 1\} $, $ \bar{x_i} = 1 - x_i $, $ \bar{y_i} = 1 - y_i $. $i=1,2,\cdots,n$.
+原码 $ x $ 和 $ y $ 之间的Hamming距离为 $ d(x, y) = \sum\limits_{i=1}^{n} |x_i - y_i| $，补码 $ \bar{x} $ 和 $ \bar{y} $ 之间的Hamming距离为 $ d(\bar{x}, \bar{y}) = \sum\limits_{i=1}^{n} |\bar{x_i} - \bar{y_i}| = \sum\limits_{i=1}^{n} |(1 - x_i) - (1 - y_i)| = \sum\limits_{i=1}^{n} |y_i - x_i| = d(x, y) $.
+因此，原码 $ x $ 和 $ y $ 之间的Hamming距离与其补码 $ \bar{x} $ 和 $ \bar{y} $ 之间的Hamming距离相等.根据 $x,y$ 的任意性进而得知而补码的最小距离与原码的最小距离相同.
+ \end{tcolorbox}

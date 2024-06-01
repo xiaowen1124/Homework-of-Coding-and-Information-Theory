@@ -1,0 +1,161 @@
+
+\section{第一次课后作业}
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 单选题]
+  概率分布 $ \bar{p}=\left\{p_{1}, p_{2}, \cdots, p_{a}\right\} $ 是一个确定性分布 为熵 $ H\left(p_{1}, p_{2}, \cdots, p_{a}\right)=0 $ 的(  ) 条件.
+
+    
+(A) 充分条件;
+(B) 必要条件;
+(C) 充分必要条件;
+(D) 既不充分也不必要.
+ \tcblower
+
+概率分布 $\bar{p}=\left\{p_{1}, p_{2}, \cdots, p_{a}\right\}$ 是一个确定性分布，即所有的概率都为1或0，因此熵 $H\left(p_{1}, p_{2}, \cdots, p_{a}\right)=0$.
+
+反之，若$H\left(p_{1}, p_{2}, \cdots, p_{a}\right)=0 \text {, 则由 } H\left(p_{1}, p_{2}, \cdots, p_{a}\right) \text { 的 }
+$
+定义可知, $ \forall i, p_{i} \log _{c} p_{i}=0 $, 或者 $ p_{i}=0 $, 或者 $ \log _{c} p_{i}=0 $, 由于 $ \sum\limits_{i=1}^{a} p_{i}=1, p_{i} \geq 0 $, 存在 $ i $ 使得 $ p_{i}=1 $, 而其它 $ p_{j}=0 $, 因此 $ \bar{p} $ 必为确定型分布.
+
+所以，答案是：(C) 充分必要条件
+
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 单选题]
+ 设 $ \xi $ 是一个二元随机变量, 即 $ \mathscr{X}=\{0,1\} $,令 $ p(\xi=1)=p, p(\xi=0)=1-p $. 则有二元熵函数 $ H(p)=p \log _{2} \frac{1}{p}+(1-p) \log _{2} \frac{1}{1-p} $,则当 $ p=$(  ) 时, $ H(p) $ 达到最大值.
+
+(A) $ 0  $ (B) $ \frac{1}{4} $;
+(C) $ \frac{1}{2} $;(D) 1 .
+  \tcblower
+  首先，计算 $ H(p) $ 的导数：
+$$
+\begin{aligned}
+H(p) & =-p \log_2 p-(1-p) \log_2 (1-p) \\
+H^{\prime}(p) & =-\log_2 p-p \cdot \frac{1}{\ln 2 \cdot p}+\log_2 (1-p)+\frac{1}{1-p} \cdot \frac{1-p}{\ln 2} \\
+& =-\log_2 p-\frac{1}{\ln 2}+\log_2 (1-p)+\frac{1}{\ln 2} \\
+& =-\log_2 p+\log_2 (1-p) \\
+& =\log_2 \frac{1-p}{p}
+\end{aligned}
+$$
+令导数等于零，解方程 $ \log _{2} \frac{1-p}{p}=0 $，得到 $ p=\frac{1}{2} $.
+
+接下来，我们来验证 $ p=\frac{1}{2} $ 是 $ H(p) $ 的最大值点还是最小值点.我们可以通过二阶导数的符号来判断.计算二阶导数：
+$$
+\begin{aligned}
+\frac{d^{2} H(p)}{d p^{2}} &=\frac{d}{d p}\left[\log _{2} \frac{1-p}{p}\right] \\
+&=\frac{1}{p(p-1)\ln 2}
+\end{aligned}
+$$
+当 $ p=\frac{1}{2} $ 时，$ \frac{1}{p(p-1)\ln 2}<0 $，所以 $ p=\frac{1}{2} $ 是 $ H(p) $ 的最大值点.
+
+因此，当 $ p=\frac{1}{2} $ 时，$ H(p) $ 达到最大值.选项 (C) $ \frac{1}{2} $ 是正确答案.
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 单选题]
+若 $ H(\xi, \eta)=H(\xi)+H(\eta) $ ，则随机变量 $ \xi $与 $\eta$ 的关系(  ).
+
+A. $ \xi $ 由 $ \eta $ 决定；
+
+B. $ \eta $ 由$ \xi $决定；
+
+C. $ \xi $ 与 $ \eta $ 相互独立.
+
+  \tcblower
+
+当两个随机变量 $\xi$ 和 $\eta$ 相互独立时，它们的联合概率分布可以表示为它们各自的边缘概率分布的乘积，即 $p(\xi, \eta) = p(\xi) \cdot p(\eta)$.根据熵的定义，随机变量的熵可以表示为 $H(\xi) = -\sum\limits_{{X}} p(x) \log p(x)$，其中 $x$ 是随机变量 $\xi$ 的取值.同样地，$H(\eta) = -\sum\limits_{{Y}} p(y) \log p(y)$，其中 $y$ 是随机变量 $\eta$ 的取值.当两个随机变量相互独立时，它们的联合熵可以表示为 $H(\xi, \eta) = -\sum\limits_{X}\sum\limits_{Y} p(x, y) \log p(x, y)$.由于它们相互独立，联合概率分布可以拆分为各自的边缘概率分布的乘积，即 $p(x, y) = p(x) \cdot p(y)$.代入联合熵的定义中，我们有：
+
+$$
+\begin{aligned}
+H(\xi, \eta) &= -\sum_{X}\sum_{Y} p(x, y) \log p(x, y) \\
+&= -\sum_{{X}}\sum_{Y} p(x) \cdot p(y) \log (p(x) \cdot p(y)) \\
+&= -\sum_{X}\sum_{Y} p(x) \cdot p(y) (\log p(x) + \log p(y)) \\
+&= -\sum_{X}\sum_{Y} p(x) \cdot p(y) \log p(x) - \sum_{X}\sum_{Y} p(x) \cdot p(y) \log p(y) \\
+&= -\sum_{X} p(x) \log p(x) - \sum_{Y} p(y) \log p(y) \\
+&= H(\xi) + H(\eta)
+\end{aligned}
+$$
+
+因此，当 $H(\xi, \eta) = H(\xi) + H(\eta)$ 时，可以得出 $\xi$ 和 $\eta$ 是相互独立的.
+
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title= 单选题]
+$  \mathrm{H}(\xi, \eta)=\mathrm{H}(\xi) $ ，则随机变量 $ \xi $ 与 $ \eta $ 的关系 ( ).
+
+A. $ \xi $ 由 $ \eta $ 决定；
+
+B. $ \xi $ 与相互独立；
+
+C. $ \eta $ 由$ \xi $决定.
+  \tcblower
+
+根据题目中的信息 $ \mathrm{H}(\xi, \eta)=\mathrm{H}(\xi) $，这意味着给定 $ \xi $ 的情况下， $ \eta $ 的条件熵为零，即 $ \mathrm{H}(\eta|\xi) = 0 $.这表明在已知 $ \xi $ 的情况下， $ \eta $ 是确定的，因此可以得出结论： $ \eta $ 由 $ \xi $ 决定.因此，答案是 C. $ \eta $ 由 $ \xi $ 决定.
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title=计算题]
+计算 $ H\left(\frac{1}{a}, \frac{1}{a}, \cdots, \frac{1}{a}, \frac{2}{a}, \frac{2}{a}\right) $
+
+
+ \tcblower
+由 $ \Sigma P_{i}=1 $ 知,含 $ (a-4) $ 个 $ \frac{1}{a}$ , 2 个$ \frac{2}{a} $ ，总共$ (a-2) $ 项， 于是
+$$
+\begin{aligned}
+H\left(\frac{1}{a}, \frac{1}{a}, \cdots, \frac{1}{a}, \frac{2}{a}, \frac{2}{a}\right) & =\sum_{i=1}^{a-2} p_{i} \cdot \log \frac{1}{p_{i}} \\
+& =\sum_{i=1}^{a-4} \frac{1}{a} \log a+2 \cdot \frac{2}{a} \log \frac{a}{2} \\
+& =\frac{a-4}{a} \cdot \log a+\frac{4}{a} \log \frac{a}{2} \\
+& =\frac{a-4}{a} \cdot \log a+\frac{4}{a} \log a-\frac{4}{a} \log 2 \\
+& =\log a-\frac{4}{a} \log 2
+\end{aligned}
+$$
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=blue!5!white,colframe=blue!75!black,
+ title=计算题]
+设两只口袋中各有20个球，第一支口袋中有10个白球，5个黑球和5 个红球; 第二只口袋中有8个白球, 8 个黑球和 4 个红球,从每只口袋中各取一个球, 试判断哪一个结果的不肯定性更大.
+
+
+ \tcblower
+当我们要判断哪个结果的不确定性更大时，可以使用熵来衡量.
+首先，我们将第一只口袋的球的颜色作为随机变量 $\xi_1$，它的概率分布为：
+$$
+\xi_1 \sim \left(\begin{array}{ccc}\text{白} & \text{黑} & \text{红} \\ \frac{1}{2} & \frac{1}{4} & \frac{1}{4}\end{array}\right)
+$$
+其中，$\frac{1}{2}$ 表示白球的概率，$\frac{1}{4}$ 表示黑球的概率，$\frac{1}{4}$ 表示红球的概率.
+
+计算第一只口袋的熵 $H(\xi_1)$：
+$$ H\left(\xi_{1}\right)=\frac{1}{2} \log 2+2 \times \frac{1}{4} \log 4=\frac{1}{2}+1=1.5  \text{ bits}
+$$
+接下来，我们将第二只口袋的球的颜色作为随机变量 $\xi_2$，它的概率分布为：
+$$
+\xi_2 \sim \left(\begin{array}{ccc}\text{白} & \text{黑} & \text{红} \\ \frac{2}{5} & \frac{2}{5} & \frac{1}{5}\end{array}\right)
+$$
+其中，$\frac{2}{5}$ 表示白球的概率，$\frac{2}{5}$ 表示黑球的概率，$\frac{1}{5}$ 表示红球的概率.
+
+计算第二只口袋的熵 $H(\xi_2)$：
+
+$$
+\begin{aligned}
+H\left(\xi_{2}\right) & =\frac{4}{5} \log \frac{5}{2}+\frac{1}{5} \log 5 \\
+& =\frac{4}{5}(\log 5-\log 2)+\frac{1}{5} \log 5 \\
+& =\frac{4}{5} \log 5+\frac{1}{5} \log 5-\frac{4}{5} \\
+& =\log 5-\frac{4}{5} \approx 2.32-0.8 \\
+& =1.52 \text { bits }
+\end{aligned}
+$$
+比较 $H(\xi_1)$ 和 $H(\xi_2)$ 的值，我们可以得出结论：第二只口袋的结果的不确定性更大，因为它的熵值更大. 
+\end{tcolorbox}
+
+
+
