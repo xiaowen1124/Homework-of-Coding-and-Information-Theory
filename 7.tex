@@ -4,10 +4,10 @@
 写出二元对称信道的信道矩阵, 并利用极值法求它的信道容量.
 \tcblower
 
-   二元对称信道的信道矩阵为 $ \left(\begin{array}{cc}1-p & p\\ p & 1-p\end{array}\right) $. 设入口分布为 $ \left(p_{0}, p_{1}\right) $,对应的出口分布为 $ \left(q_{0}, q_{1}\right) $ ,则 $ \left(q_{0}, q_{1}\right)=\left(p_{0}, p_{1}\right)\left(\begin{array}{cc}1-p & p \\ p & 1-p\end{array}\right)=\left(p_{0}(1-p)+p_{1} \cdot p, p_{0} p+(1-p) p_{1}\right) $
+   二元对称信道的信道矩阵为 $ \left(\begin{array}{cc}1-p & p\\ p & 1-p\end{array}\right) $. 设入口分布为 $ \left(p_{0}, p_{1}\right) $,对应的出口分布为 $ \left(q_{0}, q_{1}\right) $ ,则 $ \left(q_{0}, q_{1}\right)=\left(p_{0}, p_{1}\right)\left(\begin{array}{cc}1-p & p \\ p & 1-p\end{array}\right)=\left(p_{0}(1-p)+p_{1}  p, p_{0} p+(1-p) p_{1}\right) $
 $$
 \begin{aligned}
-C & =\sum_{j=1}^{b} p\left(v_{j} \mid y_{i}\right) \log \frac{p\left(v_{j} \mid u_{i}\right)}{q\left(v_{j}\right)} \\
+C & =\sum_{j=1}^{b} p\left(v_{j} \mid v_{i}\right) \log \frac{p\left(v_{j} \mid u_{i}\right)}{q\left(v_{j}\right)} \\
 & =(1-p) \log \frac{1-p}{q_{0}}+p \log \frac{p}{q_{1}} \\
 & =p \log \frac{p}{q_{0}}+(1-p) \log \frac{1-p}{q_{1}}
 \end{aligned}
@@ -21,7 +21,7 @@ $$
 \end{aligned}
 $$
 则 $ p=\frac{1}{2} $ 或 $ q_{0}=q_{1} $.
-由 $ q_{0}=q_{1} $ 知 $p_{0}(1-p)+p_{1}-p=p_{0} p+(1-p) p_{1}$ $\Rightarrow p=\frac{1}{2} \text { 或 } p_{1}=p_{0}$.
+由 $ q_{0}=q_{1} $ 知 $p_{0}(1-p)+p_{1}p=p_{0} p+(1-p) p_{1}$ $\Rightarrow p=\frac{1}{2} \text { 或 } p_{1}=p_{0}$.
 由 $ p_{0}+p_{1}=1 $ 知 $ p_{0}=p_{1}=\frac{1}{2} $ 进而 $ q_{0}=q_{1}=\frac{1}{2} $
 于是
 $$
